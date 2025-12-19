@@ -1,10 +1,10 @@
 :root{
-  --bg:#0f1218;
-  --panel:#151a22;
-  --panel2:#10141b;
+  --bg:#141a26;
+--panel:#1a2130;
+--panel2:#121826;
   --text:#ffffff;
   --muted:#b8c0cf;
-  --line:#242b37;
+  --line:#2a3346;
   --royal:#2a5bff; /* královská modrá */
   --royal2:#4a78ff;
   --shadow: 0 12px 30px rgba(0,0,0,.35);
@@ -16,9 +16,12 @@ html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(1100px 700px at 15% 0%, rgba(42,91,255,.18), transparent 55%),
-              radial-gradient(900px 650px at 90% 10%, rgba(42,91,255,.10), transparent 55%),
-              var(--bg);
+ background:
+  radial-gradient(1100px 700px at 15% 0%, rgba(42,91,255,.14), transparent 60%),
+  radial-gradient(900px 650px at 90% 10%, rgba(42,91,255,.10), transparent 62%),
+  radial-gradient(900px 700px at 40% 120%, rgba(255,255,255,.05), transparent 55%),
+  var(--bg);
+
   color:var(--text);
 }
 
@@ -70,8 +73,8 @@ a{color:inherit; text-decoration:none}
 }
 
 .card{
-  background: linear-gradient(180deg, rgba(21,26,34,.92), rgba(16,20,27,.92));
-  border:1px solid rgba(36,43,55,.9);
+  background: linear-gradient(180deg, rgba(26,33,48,.92), rgba(18,24,38,.92));
+  border:1px solid rgba(42,51,70,.85);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
