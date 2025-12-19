@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Tréninková videa | Videa</title>
+  <title>Tréninková videa | Přehled</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -25,35 +25,57 @@
 
 <main class="container section">
   <div class="section-title">
-    <h2>Přehled videí</h2>
-    <span>Vyhledej a filtruj podle potřeby</span>
+    <h2>Přehled tréninkových videí</h2>
+    <span>Technika · Rychlost · Síla · Koordinace</span>
   </div>
 
-  <div class="card filters">
-    <input class="input" id="q" type="search" placeholder="Hledej (např. překážky, sprint, core)..." />
-    <select id="tema">
-      <option value="">Téma (všechna)</option>
-      <option value="technika">Technika</option>
-      <option value="rychlost">Rychlost</option>
-      <option value="sila">Síla</option>
-      <option value="koordinace">Koordinace</option>
-      <option value="prekazky">Překážky</option>
-    </select>
-    <select id="kategorie">
-      <option value="">Kategorie (všechny)</option>
-      <option value="u13">U13</option>
-      <option value="u15">U15</option>
-    </select>
-    <select id="delka">
-      <option value="">Délka (vše)</option>
-      <option value="kratke">Krátké (0–5 min)</option>
-      <option value="stredni">Střední (5–12 min)</option>
-      <option value="dlouhe">Dlouhé (12+ min)</option>
-    </select>
-    <button class="btn primary" id="reset">Reset</button>
-  </div>
+  <div class="grid">
 
-  <div class="grid" id="grid"></div>
+    <!-- VIDEO KARTA -->
+    <div class="card video-card">
+      <a class="thumb" href="https://www.youtube.com/" target="_blank" rel="noopener">
+        <div class="play"><span>▶</span></div>
+      </a>
+      <h3>Sprint – startovní pozice</h3>
+      <p class="desc">Základní nastavení těla a první kroky po startu.</p>
+      <div class="meta">
+        <span class="pill blue">Rychlost</span>
+        <span class="pill">U13</span>
+        <span class="pill">0–5 min</span>
+      </div>
+    </div>
+
+    <!-- VIDEO KARTA -->
+    <div class="card video-card">
+      <a class="thumb" href="https://www.youtube.com/" target="_blank" rel="noopener">
+        <div class="play"><span>▶</span></div>
+      </a>
+      <h3>Překážky – rytmus a náběh</h3>
+      <p class="desc">Drilly na rytmus mezi překážkami a správný náběh.</p>
+      <div class="meta">
+        <span class="pill blue">Překážky</span>
+        <span class="pill">U15</span>
+        <span class="pill">5–12 min</span>
+      </div>
+    </div>
+
+    <!-- VIDEO KARTA -->
+    <div class="card video-card">
+      <a class="thumb" href="https://www.youtube.com/" target="_blank" rel="noopener">
+        <div class="play"><span>▶</span></div>
+      </a>
+      <h3>Core – stabilita pro běh</h3>
+      <p class="desc">Jednoduchá sestava na posílení trupu a stabilitu.</p>
+      <div class="meta">
+        <span class="pill blue">Síla</span>
+        <span class="pill">U13</span>
+        <span class="pill">5–12 min</span>
+      </div>
+    </div>
+
+    <!-- Přidáš další karty stejným způsobem -->
+
+  </div>
 </main>
 
 <footer class="footer">
@@ -64,111 +86,8 @@
 
 <script>
   document.getElementById("y").textContent = new Date().getFullYear();
-
-  // 1) Tady si budeš přidávat videa (jen kopíruj objekt a uprav)
-  const videos = [
-    {
-      title: "Sprint – startovní pozice (základy)",
-      desc: "Základní nastavení těla, práce paží, první kroky.",
-      url: "https://www.youtube.com/",
-      tema: "rychlost",
-      kategorie: "u13",
-      delka: "kratke",
-      tags: ["sprint", "start", "rychlost"]
-    },
-    {
-      title: "Překážky – rytmus a náběh",
-      desc: "Drilly na rytmus, náběh a vedení kolene.",
-      url: "https://www.youtube.com/",
-      tema: "prekazky",
-      kategorie: "u15",
-      delka: "stredni",
-      tags: ["prekazky", "rytmus"]
-    },
-    {
-      title: "Core – stabilita pro běh",
-      desc: "Jednoduchá sestava na core a stabilitu trupu.",
-      url: "https://www.youtube.com/",
-      tema: "sila",
-      kategorie: "u13",
-      delka: "stredni",
-      tags: ["core", "stabilita"]
-    }
-  ];
-
-  const grid = document.getElementById("grid");
-  const q = document.getElementById("q");
-  const tema = document.getElementById("tema");
-  const kategorie = document.getElementById("kategorie");
-  const delka = document.getElementById("delka");
-  const reset = document.getElementById("reset");
-
-  function pillLabelTema(t){
-    const map = {
-      technika:"Technika",
-      rychlost:"Rychlost",
-      sila:"Síla",
-      koordinace:"Koordinace",
-      prekazky:"Překážky"
-    };
-    return map[t] || t;
-  }
-
-  function render(list){
-    grid.innerHTML = "";
-    if(list.length === 0){
-      grid.innerHTML = `<div class="card video-card" style="grid-column:1/-1">
-        <h3>Nenalezeno</h3>
-        <p class="desc">Zkus upravit filtry nebo vyhledávání.</p>
-      </div>`;
-      return;
-    }
-
-    list.forEach(v => {
-      const el = document.createElement("div");
-      el.className = "card video-card";
-      el.innerHTML = `
-        <a class="thumb" href="${v.url}" target="_blank" rel="noopener">
-          <div class="play"><span>▶</span></div>
-        </a>
-        <h3>${v.title}</h3>
-        <p class="desc">${v.desc}</p>
-        <div class="meta">
-          <span class="pill blue">${pillLabelTema(v.tema)}</span>
-          <span class="pill">${v.kategorie.toUpperCase()}</span>
-          <span class="pill">${v.delka.replace("kratke","0–5 min").replace("stredni","5–12 min").replace("dlouhe","12+ min")}</span>
-        </div>
-      `;
-      grid.appendChild(el);
-    });
-  }
-
-  function apply(){
-    const needle = q.value.trim().toLowerCase();
-    const t = tema.value;
-    const k = kategorie.value;
-    const d = delka.value;
-
-    const filtered = videos.filter(v => {
-      const hay = (v.title + " " + v.desc + " " + v.tags.join(" ")).toLowerCase();
-      const okQ = needle ? hay.includes(needle) : true;
-      const okT = t ? v.tema === t : true;
-      const okK = k ? v.kategorie === k : true;
-      const okD = d ? v.delka === d : true;
-      return okQ && okT && okK && okD;
-    });
-
-    render(filtered);
-  }
-
-  [q, tema, kategorie, delka].forEach(el => el.addEventListener("input", apply));
-  reset.addEventListener("click", () => {
-    q.value = ""; tema.value = ""; kategorie.value = ""; delka.value = "";
-    apply();
-  });
-
-  render(videos);
 </script>
+
 </body>
 </html>
 
