@@ -23,28 +23,23 @@
   </div>
 </header>
 
-
-
-  
-  </div>
-</main>
-
-<section id="jak-to-funguje" class="container section">
+<main class="container section">
   <div class="section-title">
     <h2>Informace</h2>
   </div>
 
   <div class="grid" style="grid-template-columns: 1fr;">
     <!-- TEXTOVÉ OKNO -->
-    <div class="card hero-card">
-      <h3 style="margin:14px 0 8px; font-size:18px;">Jak to používat</h3>
+    <section class="card hero-card">
+      <h3 style="margin:0 0 8px; font-size:18px;">Jak to používat</h3>
+
       <p class="desc">
         Tady si napiš libovolné info pro svěřence/rodiče (např. jak videa používat, jak často,
         co je prioritní, případně odkazy na pravidla).
       </p>
 
       <div style="margin-top:12px" class="small">
-        • Doporučení: začni „Úvodním videem“ vpravo.<br>
+        • Doporučení: začni úvodním videem níže.<br>
         • Nová videa přidávej na stránku <b>Videa</b>.<br>
         • Pokud chceš něco doplnit, napiš přes <b>Kontakt</b>.
       </div>
@@ -53,37 +48,42 @@
         <a class="btn primary" href="videa.html">Otevřít videa</a>
         <a class="btn" href="kontakt.html">Napsat</a>
       </div>
-    </div>
+    </section>
 
-  <!-- HLAVNÍ VIDEO -->
-<div class="card hero-card">
-  <div style="
-    margin-top:12px;
-    aspect-ratio:16/9;
-    border-radius:16px;
-    overflow:hidden;
-    border:1px solid rgba(36,43,55,.9);
-  ">
-    <iframe
-      width="100%"
-      height="100%"
-      src="https://www.youtube.com/embed/SFyag2GnH4w"
-      title="Úvodní video"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+    <!-- HLAVNÍ VIDEO + FALLBACK -->
+    <section class="card hero-card">
+      <h3 style="margin:0 0 10px; font-size:18px;">Úvodní video</h3>
+
+      <div style="
+        aspect-ratio:16/9;
+        border-radius:16px;
+        overflow:hidden;
+        border:1px solid rgba(36,43,55,.9);
+        background:#000;
+      ">
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/SFyag2GnH4w"
+          title="Úvodní video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="small" style="margin-top:10px">
+        Pokud se video nezobrazí kvůli omezení YouTube, otevři ho přímo:
+      </div>
+
+      <div class="actions" style="margin-top:10px">
+        <a class="btn" href="https://www.youtube.com/watch?v=SFyag2GnH4w" target="_blank" rel="noopener">
+          Otevřít na YouTube
+        </a>
+      </div>
+    </section>
   </div>
-</div>
-
-
-      <p class="small" style="margin-top:10px">
-        Vyměň <b>VIDEO_ID</b> za ID z YouTube odkazu.
-      </p>
-    </div>
-  </div>
-</section>
-
+</main>
 
 <footer class="footer">
   <div class="container">
@@ -94,5 +94,7 @@
 <script>
   document.getElementById("y").textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
+
