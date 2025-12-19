@@ -217,3 +217,13 @@ select{cursor:pointer}
 }
 .footer a{color:#dfe7ff}
 
+.btn.red{
+  background: linear-gradient(135deg, #e53935, #c62828);
+  border-color: rgba(229,57,53,.6);
+  color:#ffffff;
+  box-shadow: 0 12px 24px rgba(229,57,53,.25);
+}
+
+.btn.red:hover{
+  filter: brightness(1.08);
+}
