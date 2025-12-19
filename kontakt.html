@@ -1,1 +1,60 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tréninková videa | Kontakt</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <div class="badge">TK</div>
+      <div>Tréninková videa</div>
+    </a>
+
+    <nav class="menu">
+      <a href="index.html">Domů</a>
+      <a href="videa.html">Videa</a>
+      <a class="active" href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container section">
+  <div class="section-title">
+    <h2>Kontakt</h2>
+    <span>Dotazy, návrhy videí, spolupráce</span>
+  </div>
+
+  <div class="grid">
+    <section class="card hero-card" style="grid-column:1/-1">
+      <h3>Napiš mi</h3>
+      <p class="desc">Doplň si kontaktní údaje. Doporučuji přidat i krátké pravidlo k používání videí (pro oddíl / pro rodiče).</p>
+
+      <div class="actions" style="margin-top:14px">
+        <a class="btn primary" href="mailto:tvuj@email.cz">Odeslat e-mail</a>
+        <a class="btn" href="videa.html">Přejít na videa</a>
+      </div>
+
+      <div style="margin-top:14px" class="small">
+        Doporučení: Pokud budou videa jen pro určitou skupinu, dej sem upozornění a odkaz na pravidla.
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    © <span id="y"></span> Tréninková videa
+  </div>
+</footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
 
