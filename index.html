@@ -1,67 +1,119 @@
+<!doctype html>
+<html lang="cs">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Tréninková videa</title>
+  <title>Tréninková videa | Domů</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+<body>
+
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <div class="badge">TK</div>
+      <div>Tréninková videa</div>
+    </a>
+
+    <nav class="menu">
+      <a class="active" href="index.html">Domů</a>
+      <a href="videa.html">Videa</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
 <main class="container hero">
   <div class="hero-grid">
-    <!-- INFORMAČNÍ OKÉNKO -->
     <section class="card hero-card">
-      <div class="kicker">
-        <span class="dot"></span>
-        Tréninková videa – přehled
-      </div>
-
-      <h1>Všechny tréninkové materiály na jednom místě</h1>
-
+      <div class="kicker"><span class="dot"></span> Přehled tréninků na jednom místě</div>
+      <h1>Rychle najdi video podle tématu, kategorie a délky.</h1>
       <p>
-        Tato stránka slouží jako centrální přehled tréninkových videí
-        pro atletiku (U13 / U15). Najdeš zde technická videa, drilly,
-        inspiraci do tréninku i doplňková cvičení.
+        Tato stránka slouží jako moderní katalog tréninkových videí (technika, rychlost, síla, koordinace).
+        Můžeš přidávat YouTube odkazy a filtrovat je podle toho, co zrovna potřebuješ.
       </p>
-
-      <ul class="small" style="margin-top:12px; line-height:1.7">
-        <li>• technika běhu, překážky, síla, koordinace</li>
-        <li>• vhodné pro trenéry i svěřence</li>
-        <li>• jednoduchý přístup bez složitého hledání</li>
-      </ul>
-
       <div class="actions">
         <a class="btn primary" href="videa.html">Přejít na videa</a>
-        <a class="btn" href="kontakt.html">Kontakt</a>
+        <a class="btn" href="#jak-to-funguje">Jak to funguje</a>
       </div>
     </section>
 
-    <!-- HLAVNÍ ÚVODNÍ VIDEO -->
-    <section class="card hero-card">
-      <div class="kicker">
-        <span class="dot"></span>
-        Úvodní video
+    <aside class="card stats">
+      <div class="stat">
+        <div>
+          <div class="small">Kategorie</div>
+          <b>U13 / U15</b>
+        </div>
+        <div class="pill blue">Atletika</div>
       </div>
-
-      <div style="
-        margin-top:12px;
-        aspect-ratio:16/9;
-        border-radius:16px;
-        overflow:hidden;
-        border:1px solid rgba(36,43,55,.9);
-        box-shadow: var(--shadow);
-      ">
-        <iframe
-          width="100%"
-          height="100%"
-          src="https://www.youtube.com/embed/VIDEO_ID"
-          title="Úvodní tréninkové video"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <div class="stat">
+        <div>
+          <div class="small">Stav</div>
+          <b>Online</b>
+        </div>
+        <div class="pill">GitHub Pages</div>
       </div>
-
-      <p class="small" style="margin-top:10px">
-        Doporučené úvodní video k práci s tréninkovými materiály.
-      </p>
-    </section>
+      <div class="stat">
+        <div>
+          <div class="small">Tip</div>
+          <b>Filtry</b>
+        </div>
+        <div class="pill">Vyhledávání</div>
+      </div>
+    </aside>
   </div>
 </main>
+
+<section id="jak-to-funguje" class="container section">
+  <div class="section-title">
+    <h2>Jak to funguje</h2>
+    <span>Jednoduchá správa, rychlé hledání</span>
+  </div>
+
+  <div class="grid">
+    <div class="card video-card">
+      <div class="thumb">
+        <div class="play"><span>▶</span></div>
+      </div>
+      <h3>1) Přidáš video</h3>
+      <p class="desc">Vložíš YouTube odkaz a štítky (téma, kategorie, délka).</p>
+      <div class="meta">
+        <span class="pill blue">YouTube</span><span class="pill">Tagy</span><span class="pill">Struktura</span>
+      </div>
+    </div>
+
+    <div class="card video-card">
+      <div class="thumb">
+        <div class="play"><span>▶</span></div>
+      </div>
+      <h3>2) Vyfiltruješ</h3>
+      <p class="desc">Podle tématu (rychlost, technika…), kategorie (U13/U15) nebo délky.</p>
+      <div class="meta">
+        <span class="pill blue">Filtry</span><span class="pill">Vyhledávání</span>
+      </div>
+    </div>
+
+    <div class="card video-card">
+      <div class="thumb">
+        <div class="play"><span>▶</span></div>
+      </div>
+      <h3>3) Pustíš</h3>
+      <p class="desc">Klikneš na kartu a otevře se video v novém okně.</p>
+      <div class="meta">
+        <span class="pill blue">1 klik</span><span class="pill">Rychlost</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    © <span id="y"></span> Tréninková videa • <a href="kontakt.html">Kontakt</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
