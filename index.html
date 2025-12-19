@@ -66,45 +66,60 @@
 
 <section id="jak-to-funguje" class="container section">
   <div class="section-title">
-    <h2>Jak to funguje</h2>
-    <span>Jednoduchá správa, rychlé hledání</span>
+    <h2>Informace</h2>
+    <span>Krátce a přehledně</span>
   </div>
 
-  <div class="grid">
-    <div class="card video-card">
-      <div class="thumb">
-        <div class="play"><span>▶</span></div>
+  <div class="grid" style="grid-template-columns: repeat(2, 1fr);">
+    <!-- TEXTOVÉ OKNO -->
+    <div class="card hero-card">
+      <div class="kicker"><span class="dot"></span> O této stránce</div>
+      <h3 style="margin:14px 0 8px; font-size:18px;">Jak to používat</h3>
+      <p class="desc">
+        Tady si napiš libovolné info pro svěřence/rodiče (např. jak videa používat, jak často,
+        co je prioritní, případně odkazy na pravidla).
+      </p>
+
+      <div style="margin-top:12px" class="small">
+        • Doporučení: začni „Úvodním videem“ vpravo.<br>
+        • Nová videa přidávej na stránku <b>Videa</b>.<br>
+        • Pokud chceš něco doplnit, napiš přes <b>Kontakt</b>.
       </div>
-      <h3>1) Přidáš video</h3>
-      <p class="desc">Vložíš YouTube odkaz a štítky (téma, kategorie, délka).</p>
-      <div class="meta">
-        <span class="pill blue">YouTube</span><span class="pill">Tagy</span><span class="pill">Struktura</span>
+
+      <div class="actions" style="margin-top:14px">
+        <a class="btn primary" href="videa.html">Otevřít videa</a>
+        <a class="btn" href="kontakt.html">Napsat</a>
       </div>
     </div>
 
-    <div class="card video-card">
-      <div class="thumb">
-        <div class="play"><span>▶</span></div>
-      </div>
-      <h3>2) Vyfiltruješ</h3>
-      <p class="desc">Podle tématu (rychlost, technika…), kategorie (U13/U15) nebo délky.</p>
-      <div class="meta">
-        <span class="pill blue">Filtry</span><span class="pill">Vyhledávání</span>
-      </div>
-    </div>
+    <!-- HLAVNÍ VIDEO -->
+    <div class="card hero-card">
+      <div class="kicker"><span class="dot"></span> Úvodní video</div>
 
-    <div class="card video-card">
-      <div class="thumb">
-        <div class="play"><span>▶</span></div>
+      <div style="
+        margin-top:12px;
+        aspect-ratio:16/9;
+        border-radius:16px;
+        overflow:hidden;
+        border:1px solid rgba(36,43,55,.9);
+      ">
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/VIDEO_ID"
+          title="Úvodní tréninkové video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
       </div>
-      <h3>3) Pustíš</h3>
-      <p class="desc">Klikneš na kartu a otevře se video v novém okně.</p>
-      <div class="meta">
-        <span class="pill blue">1 klik</span><span class="pill">Rychlost</span>
-      </div>
+
+      <p class="small" style="margin-top:10px">
+        Vyměň <b>VIDEO_ID</b> za ID z YouTube odkazu.
+      </p>
     </div>
   </div>
 </section>
+
 
 <footer class="footer">
   <div class="container">
