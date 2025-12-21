@@ -30,6 +30,11 @@
       <a class="active" href="index.html">Domů</a>
       <a href="videa.html">Videa</a>
       <a href="kontakt.html">Kontakt & O mně</a>
+
+      <button id="logoutBtn" class="logout-btn" type="button">
+  Odhlásit
+</button>
+
     </nav>
   </div>
 </header>
@@ -118,6 +123,16 @@ A tak byli kočička a pejsek spokojení, i když nezametli celý les a nezachr�
 
 <script>
   document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+<script>
+  const logoutBtn = document.getElementById("logoutBtn");
+
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("site_unlocked_v1");
+      location.href = "login.html";
+    });
+  }
 </script>
 
 </body>
