@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Přihlášení</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .login-card{max-width:420px;margin:60px auto;padding:22px;border:1px solid #e6e6e6;border-radius:14px}
+    .login-card h1{margin:0 0 10px 0;font-size:22px}
+    .login-card p{margin:0 0 16px 0;opacity:.8}
+    .login-card input{width:100%;padding:12px;border-radius:10px;border:1px solid #ddd}
+    .login-card button{margin-top:10px;width:100%;padding:12px;border-radius:10px;border:0;cursor:pointer}
+    .err{margin-top:10px;color:#b00020;display:none}
+  </style>
+</head>
+<body>
+  <main class="container section">
+    <div class="login-card">
+      <h1>Přístup na stránku</h1>
+      <p>Zadej heslo pro zobrazení obsahu.</p>
+
+      <input id="pw" type="password" placeholder="Heslo" autocomplete="current-password" />
+      <button id="btn">Přihlásit</button>
+      <div id="err" class="err">Nesprávné heslo.</div>
+    </div>
+  </main>
+
+  <script>
+    // ZMĚŇ SI HESLO:
+    const PASSWORD = "zmen-me-na-svoje-heslo";
+    const KEY = "site_unlocked_v1";
+
+    function unlock() {
+      const pw = document.getElementById("pw").value;
+      const err = document.getElementById("err");
+
+      if (pw === PASSWORD) {
+        localStorage.setItem(KEY, "1");
+        // po přihlášení pošli uživatele na hlavní stránku
+        window.location.href = "index.html";
+      } else {
+        err.style.display = "block";
+      }
+    }
+
+    document.getElementById("btn").addEventListener("click", unlock);
+    document.getElementById("pw").addEventListener("keydown", (e) => {
+      if (e.key === "Enter") unlock();
+    });
+
+    // pokud už je odemčeno, rovnou přesměruj
+    if (localStorage.getItem(KEY) === "1") {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
