@@ -240,5 +240,32 @@ select{cursor:pointer}
   background: #eee;
 }
 
+/* Odhlásit = stejný základ jako menu odkazy */
+.menu .logout-btn {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+
+/* Hover stejně jako ostatní položky */
+.menu .logout-btn:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+/* Jemné zvýraznění, že jde o odhlášení */
+.menu .logout-btn {
+  opacity: 0.9;
+}
+
+.menu .logout-btn:hover {
+  opacity: 1;
+}
+
 
 
