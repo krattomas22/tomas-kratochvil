@@ -267,5 +267,62 @@ select{cursor:pointer}
   opacity: 1;
 }
 
+/* ===== LOGIN PAGE ONLY ===== */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* ČISTÉ POZADÍ – bez pruhů */
+  background: radial-gradient(
+    1200px 600px at 50% 20%,
+    #1b2b52,
+    #0a1225 70%
+  );
+}
+
+/* zruší layoutové obaly, pokud se tam dostaly */
+.login-page .section,
+.login-page .container {
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* LOGIN KARTA */
+.login-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+
+  padding: 22px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 420px;
+  color: #fff;
+}
+
+/* INPUTY */
+.login-card input {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.login-card input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+/* TLAČÍTKO */
+.login-card button {
+  background: #ffffff;
+  color: #0a1225;
+  font-weight: 600;
+}
+
+.login-card button:hover {
+  background: #f0f0f0;
+}
 
 
