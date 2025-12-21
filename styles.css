@@ -227,4 +227,18 @@ select{cursor:pointer}
 .btn.red:hover{
   filter: brightness(1.08);
 }
+.logout-btn {
+  margin-left: 16px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #f7f7f7;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #eee;
+}
+
+
 
