@@ -79,14 +79,18 @@
 
   <script>
     // ZMĚŇ SI HESLO:
-    const PASSWORD = "wasd1234";
+    const PASSWORDS = [
+  "wasd1234",
+  "tkratochvil"
+];
+
     const KEY = "site_unlocked_v1";
 
     function unlock() {
       const pw = document.getElementById("pw").value;
       const err = document.getElementById("err");
 
-      if (pw === PASSWORD) {
+      if (PASSWORDS.includes(pw)) {
         localStorage.setItem(KEY, "1");
         // po přihlášení pošli uživatele na hlavní stránku
         window.location.href = "index.html";
