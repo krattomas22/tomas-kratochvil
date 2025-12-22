@@ -115,7 +115,7 @@ const PASSWORDS = [
     const KEY = "site_unlocked_v1";
 
     function unlock() {
-      const pw = document.getElementById("pw").value;
+      const pw = document.getElementById("pw").value.trim();
       const err = document.getElementById("err");
 
       if (PASSWORDS.includes(pw)) {
